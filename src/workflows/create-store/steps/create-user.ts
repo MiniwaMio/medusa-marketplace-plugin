@@ -16,7 +16,9 @@ export const createUserStep = createStep(
     // 1. create user
     const user = await userService.createUsers({
       ...input,
-      metadata: input.is_super_admin ? { is_super_admin: true } : { is_vendor : true},
+      metadata: input.is_super_admin
+        ? { is_super_admin: true }
+        : { is_vendor: true },
     });
 
     // 2. create auth identity
